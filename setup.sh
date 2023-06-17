@@ -97,7 +97,6 @@ fi
 #      - maccy
 #      - visual-studio-code
 #      - figma
-#      - jetbrains-toolbox
 #      - sf-symbols
 info "Installing casks"
 arrow "Installing google-chrome"
@@ -213,19 +212,6 @@ else
         ok "figma installed"
     else
         warn "Failed to install figma"
-        exit 1
-    fi
-fi
-
-arrow "Installing jetbrains-toolbox"
-if brew info jetbrains-toolbox &>/dev/null; then
-    info "jetbrains-toolbox already installed"
-else
-    if brew install --cask jetbrains-toolbox
-    then
-        ok "jetbrains-toolbox installed"
-    else
-        warn "Failed to install jetbrains-toolbox"
         exit 1
     fi
 fi
