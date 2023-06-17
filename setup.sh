@@ -112,6 +112,20 @@ else
     fi
 fi
 
+arrow "Installing discord"
+if brew info discord &>/dev/null; then
+    info "discord already installed"
+else
+    if brew install --cask discord
+    then
+        ok "discord installed"
+    else
+        warn "Failed to install discord"
+        exit 1
+    fi
+fi
+
+
 arrow "Installing gimp"
 if brew info gimp &>/dev/null; then
     info "gimp already installed"
