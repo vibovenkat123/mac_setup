@@ -569,9 +569,7 @@ read gitUserName
 arrow "What is your git email?"
 read gitEmail
 git config --global user.name $gitUserName
-git config --global commit.gpgsign true
-git config --global credential.helper osxkeychain
-git config --global gpg.program "/usr/local/bin/gpg"
+git config --global user.email $gitEmail
 ok "Git config done"
 
 # Vscode key repeat
@@ -635,3 +633,12 @@ else
 fi
 
 good "Done"
+
+arrow "Installing oh-my-tmux"
+rm -rf ~/oh_my_tmux
+git clone https://github.com/gpakosz/.tmux.git ~/oh_my_tmux
+rm -rf ~/.config/tmux/{tmux.conf,tmux.conf.local}
+ln -s ~/oh_my_tmux/.tmux.conf ~/.config/tmux/tmux.conf
+ln -s ~/oh_my_tmux/.tmux.conf.local ~/.config/tmux/tmux.conf.local
+
+
