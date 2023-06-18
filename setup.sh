@@ -91,11 +91,10 @@ fi
 #      - google-chrome
 #      - gimp
 #      - docker
-#      - firefox
 #      - rectangle
 #      - hiddenbar
-#      - maccy
 #      - visual-studio-code
+#      - raycast
 #      - figma
 #      - sf-symbols
 info "Installing casks"
@@ -139,6 +138,19 @@ else
     fi
 fi
 
+arrow "Installing raycast"
+if brew info raycast &>/dev/null; then
+    info "raycast already installed"
+else
+    if brew install --cask raycast
+    then
+        ok "raycast installed"
+    else
+        warn "Failed to install raycast"
+        exit 1
+    fi
+fi
+
 arrow "Installing docker"
 if brew info docker &>/dev/null; then
     info "docker already installed"
@@ -152,18 +164,6 @@ else
     fi
 fi
 
-arrow "Installing firefox"
-if brew info firefox &>/dev/null; then
-    info "firefox already installed"
-else
-    if brew install --cask firefox
-    then
-        ok "firefox installed"
-    else
-        warn "Failed to install firefox"
-        exit 1
-    fi
-fi
 
 arrow "Installing rectangle"
 if brew info rectangle &>/dev/null; then
@@ -191,18 +191,6 @@ else
     fi
 fi
 
-arrow "Installing maccy"
-if brew info maccy &>/dev/null; then
-    info "maccy already installed"
-else
-    if brew install --cask maccy
-    then
-        ok "maccy installed"
-    else
-        warn "Failed to install maccy"
-        exit 1
-    fi
-fi
 
 arrow "Installing visual-studio-code"
 if brew info visual-studio-code &>/dev/null; then
@@ -641,4 +629,9 @@ rm -rf ~/.config/tmux/{tmux.conf,tmux.conf.local}
 ln -s ~/oh_my_tmux/.tmux.conf ~/.config/tmux/tmux.conf
 ln -s ~/oh_my_tmux/.tmux.conf.local ~/.config/tmux/tmux.conf.local
 
-
+arrow "Installing gippity"
+wget "https://drive.google.com/uc?export=download&id=18MgcIbUVS3JyTRh44BiLSvvKUfbaeUur" -O gpt.zip
+unzip  gpt.zip
+rm -rf __MACOSX
+rm -rf gpt.zip
+mv *.app /Applications/
