@@ -1,0 +1,34 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  '@vaibhavvenkat/aacod':
+    specifier: ^0.5.3
+    version: 0.5.3
+
+devDependencies:
+  '@types/node':
+    specifier: ^20.4.0
+    version: 20.4.0
+  typescript:
+    specifier: ^5.1.6
+    version: 5.1.6
+
+packages:
+
+  /@types/node@20.4.0:
+    resolution: {integrity: sha512-jfT7iTf/4kOQ9S7CHV9BIyRaQqHu67mOjsIQBC3BKZvzvUB6zLxEwJ6sBE3ozcvP8kF6Uk5PXN0Q+c0dfhGX0g==}
+    dev: true
+
+  /@vaibhavvenkat/aacod@0.5.3:
+    resolution: {integrity: sha512-fKIuh6MlCTQGYDrjcr5dxe73JotG3yOCbdr4QxszRthz4VthIoQ3TPalhXVtiikWscMJBUXp/fs07K4yGYphWg==}
+    dev: false
+
+  /typescript@5.1.6:
+    resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true
